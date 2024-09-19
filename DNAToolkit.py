@@ -72,3 +72,11 @@ def FASTAread(filePath):
         else:
             FASTAdict[FASTAlabel] += line
     return FASTAdict
+
+#hamming distance-t számol 
+def zip_hamming_distance(string_1,string_2):
+    if len(string_1) != len(string_2):
+        raise ValueError("Strings are not the same length")
+    zipped_dna = zip(string_1,string_2)
+    hammingdistance = [(nuc1,nuc2) for nuc1, nuc2 in zipped_dna if nuc1 != nuc2]
+    return len(hammingdistance)
